@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jatin - Developer Portfolio</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+        <link rel="shortcut icon"
+            href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo5ps7iYCQKH9DHbSj_8ksJtADpFgaY7dFbA&s"
+            type="image/x-icon">
+        <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: rgb(42, 25, 38);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            height: 70px;
+            background-color: rgba(109, 38, 65, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+        nav:hover {
+            background-color: rgba(109, 38, 65, 0.5);
+        }
+        nav ul {
+            display: flex;
+        }
+        nav ul li {
+            list-style: none;
+            margin: 0 15px;
+            transition: transform 0.3s;
+        }
+        nav ul li:hover {
+            transform: scale(1.1);
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s, font-size 0.3s;
+        }
+        nav ul li a:hover {
+            color: rgba(78, 92, 63, 0.73);
+            font-size: 1.07rem;
+        }
+        .left {
+            font-size: 1.5rem;
+        }
+        .firstsection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 80px 2rem;
+            background: linear-gradient(to right, rgba(109, 38, 65, 0.8), rgba(42, 25, 38, 0.8)), url('background-image.jpg') no-repeat center center/cover;
+            color: white;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .firstsection > div {
+            width: 45%;
+        }
+        .leftsection {
+            font-size: 2rem;
+            animation: slideInLeft 1s ease-out;
+        }
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .rightsection img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            animation: slideInRight 1s ease-out;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .rightsection img:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+            background-color: #f0f0f0;
+        }
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .purple {
+            color: blueviolet;
+        }
+        #element {
+            color: blueviolet;
+        }
+        section {
+            padding: 4rem 2rem;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        section:hover {
+            transform: scale(1.02);
+            opacity: 0.95;
+        }
+        #projects .project {
+            border: 1px solid #ccc;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            transition: transform 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        #projects .project:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        #contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        #contact form label {
+            margin-top: 0.5rem;
+        }
+        #contact form input, #contact form textarea {
+            padding: 0.5rem;
+            margin-top: 0.25rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        #contact form input:focus, #contact form textarea:focus {
+            border-color: blueviolet;
+            box-shadow: 0 0 8px rgba(138, 43, 226, 0.8);
+            outline: none;
+        }
+        #contact form button {
+            padding: 0.5rem;
+            margin-top: 1rem;
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            border-radius: 5px;
+        }
+        #contact form button:hover {
+            background: #565252;
+            transform: scale(1.05);
+        }
+        footer {
+            background: #5f5e5e62;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @media (max-width: 768px) {
+            .firstsection {
+                flex-direction: column;
+                text-align: center;
+            }
+            .firstsection > div {
+                width: 100%;
+                margin: 10px 0;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+        h2 {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: blueviolet;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50%;
+            height: 3px;
+            background: blueviolet;
+            border-radius: 5px;
+            animation: underline 1s ease-in-out;
+        }
+        @keyframes underline {
+            from { width: 0; }
+            to { width: 50%; }
+        }
+        .project h3 {
+            color: blueviolet;
+            transition: color 0.3s;
+        }
+        .project h3:hover {
+            color: #fff;
+        }
+        a {
+            color: blueviolet;
+            transition: color 0.3s, transform 0.3s;
+        }
+        a:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+        .firstsection div:nth-child(2) {
+            animation: fadeIn 2s ease-in-out 0.5s forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        /* Styling for the contact section */
+/* Styling for the contact section */
+#contact {
+    margin: 20px auto;
+    padding: 40px;
+    background-color: #54183679;
+    border: 1px solid #63626271;
+    border-radius: 10px;
+    max-width: 1400px; /* Centering the section and limiting its width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
+}
+
+#contact h2 {
+    font-size: 28px;
+    color: #741dc5;
+    margin-bottom: 25px;
+    text-align: center; /* Centering the heading */
+    font-family: 'Arial', sans-serif; /* Adding a clean font */
+}
+
+#contact ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#contact li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#contact li img {
+    margin-right: 15px;
+    width: 25px; /* Slightly larger for better visibility */
+    height: 25px; /* Slightly larger for better visibility */
+    transition: transform 0.3s ease-in-out;
+}
+
+#contact li a {
+    text-decoration: none;
+    color: white; /* Blue color for links */
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+    font-family: 'Arial', sans-serif; /* Adding a clean font */
+}
+
+#contact li:hover {
+    transform: scale(1.05); /* Scale up on hover */
+    background-color: #63626271; /* Light grey background on hover */
+}
+
+#contact li img:hover {
+    transform: rotate(360deg); /* Rotate 360 degrees on hover */
+}
+
+#contact li a:hover {
+    color: #27b300; /* Darker blue on hover */
+}
+
+/* Ensuring the last list item does not have a bottom margin */
+#contact li:last-child {
+    margin-bottom: 0;
+}
+
+
+    </style>
+
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="left">Jatin Portfolio</div>
+                <div class="right">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact Me</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="firstsection">
+                <div class="leftsection">
+                    Hi, My name is <span class="purple">Jatin Kumar</span>
+                    <div>I am a passionate </div>
+                    <span id="element"></span>
+                </div>
+                <div class="rightsection">
+                    <img src="jatin.jpg" alt="Developer at work">
+                </div>
+            </section>
+
+            <section id="home">
+                <h2>Welcome to My Portfolio</h2>
+                <p>Hi, I'm Jatin Kumar, a B.Tech student specializing in
+                    Computer Science. Explore my projects and skills, and get in
+                    touch if you'd like to collaborate!</p>
+            </section>
+
+            <section id="about">
+                <h2>About Me</h2>
+                <p>I'm a B.Tech student at K L University, specializing in
+                    Computer Science. I have a strong interest in web
+                    development, machine learning, and embedded systems. I am
+                    passionate about solving real-world problems through
+                    technology and have worked on various projects that showcase
+                    my skills and dedication.</p>
+                <p>I have completed internships at DATA ENGINEERING VIRTUAL
+                    INTERNSHIP and AICTE FROM EDUSKILLS. where I gained
+                    practical experience in web development and data analysis. I
+                    am always eager to learn new things and take on challenging
+                    projects.</p>
+                <p>Download my <a href="Jatin_Resume_Data.pdf"
+                        target="_blank">resume</a> to know more about my
+                    qualifications and experience.</p>
+            </section>
+
+            <section id="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Programming Languages: C, Java, JavaScript, Python</li>
+                    <li>Web Development: HTML, CSS, JavaScript, React.js,
+                        Node.js</li>
+                    <li>Database Management: MySQL, MongoDB</li>
+                    <li>Tools and Platforms: GitHub, visual studio code, idle,
+                        pgAdmin, online compilers, PyCharm, Block code, intellij idea</li>
+                    <li>Operating Systems: Windows, Linux, Android</li>
+                </ul>
+            </section>
+
+            <section id="projects">
+                <h2>Projects</h2>
+                <div class="project">
+                    <h3>Movie/Tv Show Recommendation System </h3>
+                    <p>Description: This project develops a movie and TV show
+                        recommendation system using user preferences and content
+                        features like genres and actors. It enhances user
+                        engagement by suggesting personalized content based on
+                        individual viewing habits and combines content-based and
+                        collaborative filtering techniques for accurate
+                        recommendations.</p>
+                    <p>Technologies Used: HTML, CSS, JavaScript, Python,
+                        etc.</p>
+                    <p>Links: <a
+                            href="https://github.com/9304668206/MOVIE-TV-SHOW-RECOMMENDATION-SYSTEM">GitHub Repository</a>
+                </div>
+                <div class="project">
+                    <h3>Chatbot With Sentiment Analysis</h3>
+                    <p>Description: This project involves creating a chatbot
+                        equipped with sentiment analysis capabilities. It
+                        responds to user queries while analyzing the sentiment
+                        of their messages to provide appropriate and empathetic
+                        interactions.</p>
+                    <p>Technologies Used: React, Node.js, Express, MongoDB,
+                        etc.</p>
+                    <p>Links: <a
+                            href="https://github.com/9304668206/chatbot-sentiment-analysis-">GitHub Repository</a>
+                </div>
+
+                <section id="contact">
+                    <h2>Contact Me</h2>
+                    <ul>
+                        <li>
+                            <img src="gmail.png" alt="Gmail Logo">
+                            <a
+                                href="https://mail.google.com/mail/u/0/?ogbl#inbox">jkjatinkumar930@gmail.com</a>
+                        </li>
+                        <li>
+                            <img src="linkdin.png" alt="LinkedIn Logo">
+                            <a
+                                href="https://www.linkedin.com/in/jatin-kumar-b1802629b">LinkedIn Profile</a>
+                        </li>
+                        <li>
+                            <img src="HackerRank.png" alt="HackerRank Logo">
+                            <a href="https://www.hackerrank.com/profile/JATINKUMAR166"
+                                target="_blank">HackerRank Profile</a>
+                        </li>
+                        <li>
+                            <img src="codechef.jpeg" alt="CodeChef Logo">
+                            <a
+                                href="https://www.codechef.com/users/jatinkumar166">CodeChef Profile</a>
+                        </li>
+                        <li>
+                            <img src="github.png" alt="GitHub Logo">
+                            <a href="https://github.com/9304668206"
+                                target="_blank">GitHub Profile</a>
+                        </li>
+                        <li>
+                            <img src="phone.png" alt="Phone Logo">
+                            +91 9304668206
+                        </li>
+                    </ul>
+                </section>
+
+            </main>
+
+            <script
+                src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+            <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer.', 'Programming Enthusiast.', 'Tech Learner.'],
+            typeSpeed: 50,
+            backSpeed: 50,
+            loop: true
+        });
+    </script>
+
+            <footer>
+                <p>&copy; 2024 Jatin Kumar</p>
+            </footer>
+        </body>
+    </html>
