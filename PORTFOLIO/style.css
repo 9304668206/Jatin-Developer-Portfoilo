@@ -1,0 +1,302 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(42, 25, 38);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 70px;
+    background-color: rgba(109, 38, 65, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+nav:hover {
+    background-color: rgba(109, 38, 65, 0.5);
+}
+nav ul {
+    display: flex;
+}
+nav ul li {
+    list-style: none;
+    margin: 0 15px;
+    transition: transform 0.3s;
+}
+nav ul li:hover {
+    transform: scale(1.1);
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s, font-size 0.3s;
+}
+nav ul li a:hover {
+    color: rgba(78, 92, 63, 0.73);
+    font-size: 1.07rem;
+}
+.left {
+    font-size: 1.5rem;
+}
+.firstsection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 80px 2rem;
+    background: linear-gradient(to right, rgba(109, 38, 65, 0.8), rgba(42, 25, 38, 0.8)), url('background-image.jpg') no-repeat center center/cover;
+    color: white;
+    animation: fadeIn 2s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.firstsection > div {
+    width: 45%;
+}
+.leftsection {
+    font-size: 2rem;
+    animation: slideInLeft 1s ease-out;
+}
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.rightsection img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    animation: slideInRight 1s ease-out;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+.rightsection img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+    background-color: #f0f0f0;
+}
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.purple {
+    color: blueviolet;
+}
+#element {
+    color: blueviolet;
+}
+section {
+    padding: 4rem 2rem;
+    transition: transform 0.3s, opacity 0.3s;
+}
+section:hover {
+    transform: scale(1.02);
+    opacity: 0.95;
+}
+#projects .project {
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    transition: transform 0.3s;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+#projects .project:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+}
+#contact form {
+    display: flex;
+    flex-direction: column;
+}
+#contact form label {
+    margin-top: 0.5rem;
+}
+#contact form input, #contact form textarea {
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+#contact form input:focus, #contact form textarea:focus {
+    border-color: blueviolet;
+    box-shadow: 0 0 8px rgba(138, 43, 226, 0.8);
+    outline: none;
+}
+#contact form button {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    border-radius: 5px;
+}
+#contact form button:hover {
+    background: #565252;
+    transform: scale(1.05);
+}
+footer {
+    background: #5f5e5e62;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    animation: fadeIn 2s ease-in-out;
+}
+@media (max-width: 768px) {
+    .firstsection {
+        flex-direction: column;
+        text-align: center;
+    }
+    .firstsection > div {
+        width: 100%;
+        margin: 10px 0;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+h2 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: blueviolet;
+}
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    height: 3px;
+    background: blueviolet;
+    border-radius: 5px;
+    animation: underline 1s ease-in-out;
+}
+@keyframes underline {
+    from { width: 0; }
+    to { width: 50%; }
+}
+.project h3 {
+    color: blueviolet;
+    transition: color 0.3s;
+}
+.project h3:hover {
+    color: #fff;
+}
+a {
+    color: blueviolet;
+    transition: color 0.3s, transform 0.3s;
+}
+a:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+.firstsection div:nth-child(2) {
+    animation: fadeIn 2s ease-in-out 0.5s forwards;
+    opacity: 0;
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+/* Styling for the contact section */
+/* Styling for the contact section */
+#contact {
+margin: 20px auto;
+padding: 40px;
+background-color: #54183679;
+border: 1px solid #63626271;
+border-radius: 10px;
+max-width: 1400px; /* Centering the section and limiting its width */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
+}
+
+#contact h2 {
+font-size: 28px;
+color: #741dc5;
+margin-bottom: 25px;
+text-align: center; /* Centering the heading */
+font-family: 'Arial', sans-serif; /* Adding a clean font */
+}
+
+#contact ul {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+#contact li {
+margin-bottom: 15px;
+display: flex;
+align-items: center;
+padding: 10px;
+border-radius: 5px;
+transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#contact li img {
+margin-right: 15px;
+width: 25px; /* Slightly larger for better visibility */
+height: 25px; /* Slightly larger for better visibility */
+transition: transform 0.3s ease-in-out;
+}
+
+#contact li a {
+text-decoration: none;
+color: white; /* Blue color for links */
+font-size: 16px;
+transition: color 0.3s ease-in-out;
+font-family: 'Arial', sans-serif; /* Adding a clean font */
+}
+
+#contact li:hover {
+transform: scale(1.05); /* Scale up on hover */
+background-color: #63626271; /* Light grey background on hover */
+}
+
+#contact li img:hover {
+transform: rotate(360deg); /* Rotate 360 degrees on hover */
+}
+
+#contact li a:hover {
+color: #27b300; /* Darker blue on hover */
+}
+
+/* Ensuring the last list item does not have a bottom margin */
+#contact li:last-child {
+margin-bottom: 0;
+}
